@@ -1,0 +1,1387 @@
+<!doctype html>
+
+<html class="h-full" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Flowform Architectural Studio</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @layer base {
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+        body {
+          overscroll-behavior: none;
+        }
+        main > :first-child {
+          margin-top: 0 !important;
+        }
+        main > :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      .studio-hero {
+        background-image: url("images/background.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      .studio-title {
+        color: rgb(233, 244, 253);
+      }
+      .studio-paragraph {
+        color: rgb(233, 244, 253);
+      }
+      h1 {
+        color: aliceblue !important;
+      }
+      p {
+        color: aliceblue !important;
+      }
+    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error-container": "#93000a",
+              "on-secondary-container": "#506777",
+              "primary-fixed-dim": "#b1cade",
+              "inverse-surface": "#2c3136",
+              "surface-variant": "#dee3ea",
+              "surface-bright": "#f7f9ff",
+              "on-surface-variant": "#43474c",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#ffdad6",
+              "on-surface": "#171c21",
+              "surface-container-low": "#f0f4fb",
+              "tertiary-fixed": "#dde3e7",
+              "on-background": "#171c21",
+              "surface-container-highest": "#dee3ea",
+              tertiary: "#42484c",
+              "on-error": "#ffffff",
+              "on-secondary-fixed-variant": "#324a58",
+              "secondary-fixed-dim": "#b1cadc",
+              "surface-tint": "#496173",
+              outline: "#73787c",
+              "on-primary-container": "#c4ddf2",
+              "inverse-on-surface": "#edf1f8",
+              primary: "#324a5b",
+              "surface-container": "#eaeef5",
+              "tertiary-container": "#5a6064",
+              "on-primary-fixed": "#021e2d",
+              "secondary-fixed": "#cde6f8",
+              "outline-variant": "#c3c7cc",
+              "on-primary": "#ffffff",
+              "secondary-container": "#cde6f8",
+              "on-secondary": "#ffffff",
+              "primary-fixed": "#cce6fb",
+              "inverse-primary": "#b1cade",
+              error: "#ba1a1a",
+              background: "#f7f9ff",
+              "on-tertiary": "#ffffff",
+              secondary: "#4a6171",
+              "surface-dim": "#d6dae1",
+              "surface-container-high": "#e4e8f0",
+              "on-tertiary-fixed-variant": "#41484b",
+              "on-secondary-fixed": "#041e2b",
+              "on-primary-fixed-variant": "#31495b",
+              surface: "#f7f9ff",
+              "tertiary-fixed-dim": "#c1c7cb",
+              "on-tertiary-container": "#d5dbdf",
+              "on-tertiary-fixed": "#161c1f",
+              "primary-container": "#4a6274",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "section-gap-sm": "4rem",
+              "card-padding-lg": "2.75rem",
+              "margin-lg": "4rem",
+              "margin-sm": "1.25rem",
+              "gutter-sm": "1rem",
+              "gutter-md": "1.5rem",
+              "card-padding-sm": "1.25rem",
+              "margin-md": "2.5rem",
+              "gutter-lg": "2rem",
+              "card-padding-md": "2rem",
+              "section-gap-lg": "7.5rem",
+            },
+            fontFamily: {
+              "body-lg": ["Hanken Grotesk"],
+              display: ["Hanken Grotesk"],
+              "body-md": ["Hanken Grotesk"],
+              "headline-lg-mobile": ["Hanken Grotesk"],
+              "label-md": ["Hanken Grotesk"],
+              "headline-lg": ["Hanken Grotesk"],
+              "label-sm": ["Hanken Grotesk"],
+              "headline-sm": ["Hanken Grotesk"],
+              "display-mobile": ["Hanken Grotesk"],
+              "headline-md": ["Hanken Grotesk"],
+            },
+            fontSize: {
+              "body-lg": [
+                "16px",
+                { lineHeight: "26px", letterSpacing: "0em", fontWeight: "400" },
+              ],
+              display: [
+                "80px",
+                {
+                  lineHeight: "88px",
+                  letterSpacing: "-0.035em",
+                  fontWeight: "300",
+                },
+              ],
+              "body-md": [
+                "14px",
+                {
+                  lineHeight: "22px",
+                  letterSpacing: "0.01em",
+                  fontWeight: "400",
+                },
+              ],
+              "headline-lg-mobile": [
+                "34px",
+                {
+                  lineHeight: "40px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "350",
+                },
+              ],
+              "label-md": [
+                "12px",
+                {
+                  lineHeight: "16px",
+                  letterSpacing: "0.08em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-lg": [
+                "52px",
+                {
+                  lineHeight: "58px",
+                  letterSpacing: "-0.03em",
+                  fontWeight: "300",
+                },
+              ],
+              "label-sm": [
+                "10px",
+                {
+                  lineHeight: "14px",
+                  letterSpacing: "0.12em",
+                  fontWeight: "600",
+                },
+              ],
+              "headline-sm": [
+                "22px",
+                {
+                  lineHeight: "28px",
+                  letterSpacing: "-0.015em",
+                  fontWeight: "450",
+                },
+              ],
+              "display-mobile": [
+                "44px",
+                {
+                  lineHeight: "50px",
+                  letterSpacing: "-0.025em",
+                  fontWeight: "300",
+                },
+              ],
+              "headline-md": [
+                "32px",
+                {
+                  lineHeight: "38px",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "400",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background font-body-lg text-body-lg text-on-surface antialiased flex flex-col min-h-full"
+  >
+    <header
+      class="fixed top-0 left-0 right-0 z-50 bg-surface/75 backdrop-blur-xl shadow-[0_1px_8px_rgba(17,22,27,0.04)]"
+    >
+      <div
+        class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-6"
+      >
+        <a
+          class="flex items-center gap-1.5 focus:outline-none"
+          data-path="home"
+          href="#"
+          ><span
+            class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase"
+            >Flow<span
+              class="inline-block w-1.5 h-1.5 rounded-full bg-primary mx-0.5 align-middle mb-1"
+            ></span
+            >form</span
+          ></a
+        >
+        <nav
+          class="hidden md:flex items-center bg-surface-container-high/60 p-1.5 rounded-full backdrop-blur-md"
+          data-active-classes="bg-surface-container-lowest text-on-surface shadow-[0_4px_16px_-2px_rgba(17,22,27,0.06)]"
+        >
+          <a
+            class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-all"
+            data-path="home"
+            href="index.html"
+            >HOME</a
+          ><a
+            aria-current="page"
+            class="px-5 py-2 rounded-full font-label-md transition-all bg-surface-container-lowest text-on-surface shadow-[0_4px_16px_-2px_rgba(17,22,27,0.06)]"
+            data-path="studio"
+            href="studio.html"
+            >STUDIO</a
+          ><a
+            class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-all"
+            data-path="projects"
+            href="#"
+            >PROJECTS</a
+          ><a
+            class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-all"
+            data-path="services"
+            href="#"
+            >SERVICES</a
+          ><a
+            class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-all"
+            data-path="about"
+            href="#"
+            >ABOUT</a
+          ><a
+            class="px-5 py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-lowest/60 transition-all"
+            data-path="contact-us"
+            href="#"
+            >CONTACT US</a
+          >
+        </nav>
+        <div class="flex items-center gap-4">
+          <a
+            class="hidden sm:inline-flex items-center justify-center px-5 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md tracking-wider uppercase hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_4px_12px_rgba(50,74,91,0.15)]"
+            data-path="contact-us"
+            href="#"
+            >Inquire</a
+          >
+          <div
+            class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"
+          >
+            <span class="material-symbols-outlined text-on-primary text-[18px]"
+              >person</span
+            >
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="w-full pt-20 flex-1 bg-background">
+      <div class="flex flex-col w-full">
+        <!-- Top Atmospheric Gradient & Studio Hero Section -->
+        <section
+          class="existing-class studio-hero"
+          class="relative w-full pt-10 pb-20 px-6 sm:px-10 lg:px-16 overflow-hidden"
+        >
+          <!-- Subtle architectural background glow -->
+          <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-96 bg-gradient-to-b from-surface-container/60 via-secondary-container/20 to-transparent pointer-events-none -z-10 rounded-full blur-3xl opacity-70"
+          ></div>
+          <div class="max-w-7xl mx-auto flex flex-col items-center text-center">
+            <!-- Floating Architectural Badge -->
+            <div
+              class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high/80 backdrop-blur-md shadow-sm mb-6"
+            >
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"
+              ></span>
+              <span
+                class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                >The Practice &amp; Philosophy</span
+              >
+            </div>
+            <!-- Grand Editorial Headline -->
+            <h1
+              class="font-display text-display-mobile sm:text-headline-lg lg:text-display max-w-5xl text-on-surface tracking-tight leading-[1.08] mb-6"
+              studio-title
+            >
+              Crafting architectural legacies through spatial clarity and
+              tactile restraint.
+            </h1>
+            <!-- Supporting Copy -->
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-center mb-10 leading-relaxed"
+              studio-paragraph
+            >
+              Flowform is an interdisciplinary architectural practice operating
+              at the intersection of structural permanence, human emotion, and
+              sustainable materiality. We design residential sanctuaries,
+              cultural landmarks, and commercial environments that endure.
+            </p>
+            <!-- Dual Call-to-Actions -->
+            <div class="flex flex-wrap items-center justify-center gap-4 mb-16">
+              <a
+                class="px-8 py-3.5 rounded-full bg-primary text-on-primary font-label-md text-label-md tracking-widest uppercase hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_8px_24px_rgba(50,74,91,0.22)] transform hover:-translate-y-0.5"
+                href="#case-studies"
+              >
+                Explore Our Works
+              </a>
+              <a
+                class="px-8 py-3.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md tracking-widest uppercase hover:bg-surface-container transition-all shadow-[0_4px_16px_rgba(17,22,27,0.06)] transform hover:-translate-y-0.5"
+                href="#inquire"
+              >
+                Inquire With Studio
+              </a>
+            </div>
+            <!-- Hero Visual Card: Double-height Atelier Studio -->
+            <div
+              class="w-full relative rounded-[32px] overflow-hidden shadow-[0_24px_54px_-12px_rgba(17,22,27,0.12)] aspect-[16/9] max-h-[640px] bg-surface-container"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="An expansive, light-flooded double-height architectural atelier studio with floor-to-ceiling glass windows, warm polished timber floors, and exposed concrete pillars. Architects in black attire work over expansive solid oak layout tables covered with clean white architectural scale models, foam maquettes, rolled blueprinted tracings, and notebooks. Subtle mezzanine library above filled with architectural monographs under diffuse soft northern daylight."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADl14xITC_d0PtJv8R8TVHs510UDXXH-3v9MFpBQmydH1NjDVn52OLh-ZY3KB9MCtm0Fv5YY8VNCABLSO8aI6P1RkUlOUGurg3WZLJISSqnKgaAz9jscVM0ekwWuOn5ooNo9e4a2u1vjX8kL_XHQsv4IhwmXXh84LXXmUBGnstM_GnaInxlLl3OVkH7K6eIjZPT_29BRvlQLuIFFc9hcwkM0HYXGL5_Fx6spHp1MOWDB169hDRr6dGtg"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-on-surface/60 via-transparent to-transparent"
+              ></div>
+              <!-- Floating Meta Pill in Hero -->
+              <div
+                class="absolute bottom-6 left-6 sm:bottom-10 sm:left-10 flex items-center gap-3 bg-surface-container-lowest/90 backdrop-blur-xl px-5 py-3 rounded-full shadow-[0_8px_20px_-4px_rgba(17,22,27,0.18)]"
+              >
+                <span class="material-symbols-outlined text-primary text-[20px]"
+                  >location_city</span
+                >
+                <span
+                  class="font-body-md text-body-md text-on-surface font-medium"
+                  >Flowform Atelier &amp; Research Workshop — Zurich &amp;
+                  Kyoto</span
+                >
+              </div>
+              <div
+                class="absolute bottom-6 right-6 sm:bottom-10 sm:right-10 hidden sm:flex items-center gap-2 text-surface-container-lowest font-label-sm text-label-sm uppercase tracking-widest opacity-90"
+              >
+                <span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+                Active Research Cycle 2025
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section 2: About the Studio & Philosophy -->
+        <section
+          class="w-full py-20 px-6 sm:px-10 lg:px-16 bg-surface-container-low"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start"
+            >
+              <!-- Left Editorial Statement -->
+              <div class="lg:col-span-5 flex flex-col gap-5">
+                <div class="inline-flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                  <span
+                    class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest"
+                    >About The Practice</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-md sm:text-headline-lg text-on-surface leading-[1.12] tracking-tight"
+                >
+                  We believe space is not merely enclosed volume, but a living
+                  dialogue between light, material, and human stillness.
+                </h2>
+                <div class="w-16 h-0.5 bg-primary/20 mt-4"></div>
+              </div>
+              <!-- Right Narrative & Quantitative Impact -->
+              <div class="lg:col-span-7 flex flex-col justify-between gap-10">
+                <div
+                  class="flex flex-col gap-6 text-on-surface-variant font-body-lg text-body-lg leading-relaxed"
+                >
+                  <p>
+                    Founded in 2011, Flowform unites architectural theorists,
+                    structural engineers, and material artisans into a singular
+                    collaborative body. Our lineage traces through Swiss
+                    precision craftsmanship and Japanese spatial reduction,
+                    seeking structures that feel both ancient and
+                    forward-looking.
+                  </p>
+                  <p>
+                    Rather than enforcing transient aesthetic signatures, our
+                    methodology responds to the innate geological, climatic, and
+                    social textures of each site. We champion massive timber
+                    structures, regionally quarried monolithic stone, and
+                    passive envelope engineering to compose buildings that
+                    breathe in harmony with natural cycles.
+                  </p>
+                </div>
+                <!-- Key Metrics Strip -->
+                <div
+                  class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t-0 bg-surface-container-lowest/80 p-8 rounded-[28px] shadow-[0_4px_20px_-2px_rgba(17,22,27,0.04)]"
+                >
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="font-headline-lg text-headline-lg text-primary tracking-tight font-light"
+                      >48+</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                      >Completed Projects</span
+                    >
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant/80 mt-1"
+                      >Across 12 countries globally</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="font-headline-lg text-headline-lg text-primary tracking-tight font-light"
+                      >18</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                      >Design Accolades</span
+                    >
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant/80 mt-1"
+                      >International Biennales &amp; RIBA</span
+                    >
+                  </div>
+                  <div class="flex flex-col gap-1">
+                    <span
+                      class="font-headline-lg text-headline-lg text-primary tracking-tight font-light"
+                      >100%</span
+                    >
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                      >Net-Positive Target</span
+                    >
+                    <span
+                      class="font-body-md text-body-md text-on-surface-variant/80 mt-1"
+                      >Climate resilient envelopes</span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section 3: Disciplines / Capabilities Bento Grid -->
+        <section class="w-full py-24 px-6 sm:px-10 lg:px-16 bg-surface">
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+            >
+              <div>
+                <div class="inline-flex items-center gap-2 mb-3">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                  <span
+                    class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest"
+                    >Capabilities &amp; Typologies</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-md sm:text-headline-lg text-on-surface tracking-tight"
+                >
+                  Spaces that speak with purpose.
+                </h2>
+              </div>
+              <p
+                class="font-body-md text-body-md text-on-surface-variant max-w-md"
+              >
+                Our integrated studios span all scale vectors, from regional
+                landscape territorial strategies to the microscopic tactile
+                radius of custom door hardware.
+              </p>
+            </div>
+            <!-- Bento Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Card 1: Architectural Design -->
+              <div
+                class="group relative bg-surface-container-lowest p-8 sm:p-10 rounded-[32px] shadow-[0_4px_24px_-4px_rgba(17,22,27,0.05)] hover:shadow-[0_16px_40px_-8px_rgba(17,22,27,0.10)] transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              >
+                <div class="flex items-center justify-between mb-8">
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full uppercase tracking-wider"
+                    >Concept to Turnkey</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[28px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                    >architecture</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface mb-3 tracking-tight"
+                  >
+                    Architectural Design
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed"
+                  >
+                    Masterplanning, custom residential pavilions, civic
+                    edifices, and visionary private residences. Each building is
+                    engineered as an environmental anchor that commands presence
+                    through restraint.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-3 pt-4 text-primary font-label-md text-label-md uppercase tracking-wider"
+                >
+                  <span>Explore Typologies</span>
+                  <span class="material-symbols-outlined text-[16px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- Card 2: Interior Architecture -->
+              <div
+                class="group relative bg-surface-container-lowest p-8 sm:p-10 rounded-[32px] shadow-[0_4px_24px_-4px_rgba(17,22,27,0.05)] hover:shadow-[0_16px_40px_-8px_rgba(17,22,27,0.10)] transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              >
+                <div class="flex items-center justify-between mb-8">
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full uppercase tracking-wider"
+                    >Material R&amp;D</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[28px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                    >chair</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface mb-3 tracking-tight"
+                  >
+                    Interior Architecture
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed"
+                  >
+                    Bespoke materiality, architectural millwork, integrated
+                    daylight choreography, and ambient acoustics. We construct
+                    tactile micro-climates calibrated for focused contemplation
+                    and daily ritual.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-3 pt-4 text-primary font-label-md text-label-md uppercase tracking-wider"
+                >
+                  <span>View Interior Monographs</span>
+                  <span class="material-symbols-outlined text-[16px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- Card 3: Adaptive Reuse & Heritage -->
+              <div
+                class="group relative bg-surface-container-lowest p-8 sm:p-10 rounded-[32px] shadow-[0_4px_24px_-4px_rgba(17,22,27,0.05)] hover:shadow-[0_16px_40px_-8px_rgba(17,22,27,0.10)] transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              >
+                <div class="flex items-center justify-between mb-8">
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full uppercase tracking-wider"
+                    >Conservation</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[28px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                    >foundation</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface mb-3 tracking-tight"
+                  >
+                    Adaptive Reuse &amp; Heritage
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed"
+                  >
+                    Sensitive historical restoration, stone masonry
+                    conservation, and modern structural intervention. Breathing
+                    contemporary life into historical structures while honoring
+                    their geological memory.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-3 pt-4 text-primary font-label-md text-label-md uppercase tracking-wider"
+                >
+                  <span>Restoration Archive</span>
+                  <span class="material-symbols-outlined text-[16px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+              <!-- Card 4: Landscape Integration -->
+              <div
+                class="group relative bg-surface-container-lowest p-8 sm:p-10 rounded-[32px] shadow-[0_4px_24px_-4px_rgba(17,22,27,0.05)] hover:shadow-[0_16px_40px_-8px_rgba(17,22,27,0.10)] transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              >
+                <div class="flex items-center justify-between mb-8">
+                  <span
+                    class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-3 py-1 rounded-full uppercase tracking-wider"
+                    >Biophilic Systems</span
+                  >
+                  <span
+                    class="material-symbols-outlined text-primary text-[28px] group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
+                    >park</span
+                  >
+                </div>
+                <div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface mb-3 tracking-tight"
+                  >
+                    Landscape Integration
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed"
+                  >
+                    Biophilic courtyard design, native ecology restoration, and
+                    seamless indoor-outdoor water planes. We dissolve structural
+                    perimeters to foster continuous ecological conversation.
+                  </p>
+                </div>
+                <div
+                  class="flex items-center gap-3 pt-4 text-primary font-label-md text-label-md uppercase tracking-wider"
+                >
+                  <span>Ecology Studies</span>
+                  <span class="material-symbols-outlined text-[16px]"
+                    >arrow_forward</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section 4: Creative Process (Editorial Horizontal Track) -->
+        <section
+          class="w-full py-24 px-6 sm:px-10 lg:px-16 bg-surface-container-low"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col mb-16">
+              <div class="inline-flex items-center gap-2 mb-3">
+                <span class="w-2 h-2 rounded-full bg-primary"></span>
+                <span
+                  class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest"
+                  >Our Methodology</span
+                >
+              </div>
+              <h2
+                class="font-headline-lg text-headline-md sm:text-headline-lg text-on-surface tracking-tight"
+              >
+                A disciplined trajectory from intuition to stone.
+              </h2>
+            </div>
+            <!-- Process Stages -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+              <!-- Step 01 -->
+              <div
+                class="bg-surface-container-lowest p-7 rounded-[28px] shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:bg-surface-container transition-colors"
+              >
+                <div>
+                  <span
+                    class="font-headline-lg text-headline-lg text-primary/25 font-light block mb-4"
+                    >01</span
+                  >
+                  <h4
+                    class="font-headline-sm text-[19px] leading-tight text-on-surface mb-3"
+                  >
+                    Spatial Discovery
+                  </h4>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Site topography, solar orientation, microclimate analysis,
+                    and client ethos immersion.
+                  </p>
+                </div>
+                <div
+                  class="mt-8 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm uppercase"
+                >
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Inception
+                </div>
+              </div>
+              <!-- Step 02 -->
+              <div
+                class="bg-surface-container-lowest p-7 rounded-[28px] shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:bg-surface-container transition-colors"
+              >
+                <div>
+                  <span
+                    class="font-headline-lg text-headline-lg text-primary/25 font-light block mb-4"
+                    >02</span
+                  >
+                  <h4
+                    class="font-headline-sm text-[19px] leading-tight text-on-surface mb-3"
+                  >
+                    Conceptual Cartography
+                  </h4>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Hand sketch iterations, physical timber scale models, and
+                    light-and-shadow studies.
+                  </p>
+                </div>
+                <div
+                  class="mt-8 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm uppercase"
+                >
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Form-Finding
+                </div>
+              </div>
+              <!-- Step 03 -->
+              <div
+                class="bg-surface-container-lowest p-7 rounded-[28px] shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:bg-surface-container transition-colors"
+              >
+                <div>
+                  <span
+                    class="font-headline-lg text-headline-lg text-primary/25 font-light block mb-4"
+                    >03</span
+                  >
+                  <h4
+                    class="font-headline-sm text-[19px] leading-tight text-on-surface mb-3"
+                  >
+                    Material Synthesis
+                  </h4>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Sourcing local stone, tactile mockups, structural
+                    engineering, and sustainable envelope specs.
+                  </p>
+                </div>
+                <div
+                  class="mt-8 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm uppercase"
+                >
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Prototyping
+                </div>
+              </div>
+              <!-- Step 04 -->
+              <div
+                class="bg-surface-container-lowest p-7 rounded-[28px] shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:bg-surface-container transition-colors"
+              >
+                <div>
+                  <span
+                    class="font-headline-lg text-headline-lg text-primary/25 font-light block mb-4"
+                    >04</span
+                  >
+                  <h4
+                    class="font-headline-sm text-[19px] leading-tight text-on-surface mb-3"
+                  >
+                    Precision Fabrication
+                  </h4>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Collaborative on-site execution with master stonemasons,
+                    carpenters, and precision artisans.
+                  </p>
+                </div>
+                <div
+                  class="mt-8 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm uppercase"
+                >
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Execution
+                </div>
+              </div>
+              <!-- Step 05 -->
+              <div
+                class="bg-surface-container-lowest p-7 rounded-[28px] shadow-sm flex flex-col justify-between h-full relative overflow-hidden group hover:bg-surface-container transition-colors"
+              >
+                <div>
+                  <span
+                    class="font-headline-lg text-headline-lg text-primary/25 font-light block mb-4"
+                    >05</span
+                  >
+                  <h4
+                    class="font-headline-sm text-[19px] leading-tight text-on-surface mb-3"
+                  >
+                    Inhabitation &amp; Legacy
+                  </h4>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Commissioning, acoustic tuning, lifecycle performance
+                    monitoring, and post-occupancy care.
+                  </p>
+                </div>
+                <div
+                  class="mt-8 flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm uppercase"
+                >
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Continuity
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section 5: Selected Case Studies -->
+        <section
+          class="w-full py-24 px-6 sm:px-10 lg:px-16 bg-surface"
+          id="case-studies"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6"
+            >
+              <div>
+                <div class="inline-flex items-center gap-2 mb-3">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                  <span
+                    class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest"
+                    >Iconic Built Works</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-md sm:text-headline-lg text-on-surface tracking-tight"
+                >
+                  Select studio commissions.
+                </h2>
+              </div>
+              <a
+                class="inline-flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider hover:text-on-surface transition-colors"
+                data-path="projects"
+                href="#"
+              >
+                <span>Explore Complete Archive</span>
+                <span class="material-symbols-outlined text-[18px]"
+                  >north_east</span
+                >
+              </a>
+            </div>
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <!-- Project 1: Pavilion Umbra -->
+              <div
+                class="group flex flex-col bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-[0_4px_24px_-4px_rgba(17,22,27,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(17,22,27,0.12)] transition-all"
+              >
+                <div
+                  class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container"
+                >
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="An atmospheric low-angled photograph of a modern stone and glass architectural pavilion nestled in a dense pine forest beside a dark, still reflecting pond. Monolithic hand-chiselled grey granite walls support an ultra-thin angled concrete roof overhang. Floor-to-ceiling sliding glass panels warmly reveal a minimalist interior illuminated by soft golden floor lamps at twilight dusk."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwudalXhKcorTOXFTsmfzFlQfk_eka--UvqZccJIs64HI9rnUu7GExWGSol07X4O4DVZrqAaEGTMroezhyNOz2tEnTb2f9ZD3LJ7RLf5-wkk5htgWXjPlTZcvqgWcohOPZRut_nDBRx-_vlXkyOhdw-0UsEgG5MpFG7gtSARvP3ZSb_oVPhCWt2h_tuvXkTbcomp7Ymh8IESNus6Uht3Vw2Fqe8A95ND2KuJPuAcf4_iEoQ1-DYb9EMQ"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3.5 py-1.5 rounded-full font-label-sm text-label-sm text-on-surface uppercase tracking-wider"
+                  >
+                    Kyoto, JP · 2024
+                  </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-1">
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                      >Private Residence &amp; Pavilion</span
+                    >
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-3"
+                    >
+                      Pavilion Umbra
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6"
+                    >
+                      A monolithic stone and water sanctuary framing seasonal
+                      foliage with quiet Japanese joinery principles.
+                    </p>
+                  </div>
+                  <div class="pt-4 flex items-center justify-between">
+                    <span
+                      class="font-label-md text-label-md text-primary tracking-wider uppercase group-hover:underline"
+                      >View Case Study →</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >arrow_forward</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Project 2: Casa Lumen -->
+              <div
+                class="group flex flex-col bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-[0_4px_24px_-4px_rgba(17,22,27,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(17,22,27,0.12)] transition-all"
+              >
+                <div
+                  class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container"
+                >
+                  <img
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    data-alt="Bright exterior architectural photography of a contemporary villa pavilion with a dramatic sweeping curved organic timber slat ceiling roof cantilever. Supported by slender brushed steel columns over a panoramic glass envelope looking out onto a manicured succulent garden and bright blue sky with wispy clouds."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkhGCjwLZ4MTaaiWoLKAM3crrcBWX7Zb5dmU5lwS1xFQwnJDcuZI-uXmSHPTnYjojz1BQaxPFu9n6LwPN7fkmagsc4hGqzcQKl1t7pjYW3iEa-t9j_hUZYuyievYdSp8rPKgoTGJ-1kCrw3OSKN_24MXsvtaZHLUuiEga2Btbk2wyVtnRZKWSReDzTJXTSM0yr7MCoRl0pknJ36v8rKQfuVF--dbGwFtMHtfKZ3b_EYu9yHpRrfdlAwA"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3.5 py-1.5 rounded-full font-label-sm text-label-sm text-on-surface uppercase tracking-wider"
+                  >
+                    Ubud, Bali · 2023
+                  </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-1">
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                      >Cultural Retreat</span
+                    >
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-3"
+                    >
+                      Casa Lumen
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6"
+                    >
+                      Sweeping curved mass timber roof canopy floating over
+                      transparent living pavilions integrated into tropical
+                      hydrology.
+                    </p>
+                  </div>
+                  <div class="pt-4 flex items-center justify-between">
+                    <span
+                      class="font-label-md text-label-md text-primary tracking-wider uppercase group-hover:underline"
+                      >View Case Study →</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >arrow_forward</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <!-- Project 3: Atelier Nueve -->
+              <div
+                class="group flex flex-col bg-surface-container-lowest rounded-[32px] overflow-hidden shadow-[0_4px_24px_-4px_rgba(17,22,27,0.06)] hover:shadow-[0_16px_36px_-6px_rgba(17,22,27,0.12)] transition-all"
+              >
+                <div
+                  class="relative w-full aspect-[4/3] overflow-hidden bg-surface-container"
+                >
+                  <img
+                    alt="Atelier Nueve facade"
+                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    src="https://lh3.googleusercontent.com/aida/AEtjO1Vl8MQWprTSoCEPcv_BCI3HyUcYW3ZmPck3NvlezIVsLJoG_BHTf-Rrj2HIm7ib29XWUpB-ASiJNqxoOqPVd1nRhQ3PswRokDA-U-Kxps03WZZTQ4GzOK8ll-qiQ3xK5fevQnmHIBvz1dBSsa1N4KySnUYePwKVvbhUzdQNg6_iNqead_q3E1XWFNWkrm6WYmBZqlRgu79ntOLdihfVhqYQ_ew61zXCTEwrvPNsCu9ON8H1591oGDK0KkPM"
+                  />
+                  <div
+                    class="absolute top-4 left-4 bg-surface-container-lowest/80 backdrop-blur-md px-3.5 py-1.5 rounded-full font-label-sm text-label-sm text-on-surface uppercase tracking-wider"
+                  >
+                    Valencia, ES · 2022
+                  </div>
+                </div>
+                <div class="p-8 flex flex-col justify-between flex-1">
+                  <div>
+                    <span
+                      class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest"
+                      >Civic Design Atelier</span
+                    >
+                    <h3
+                      class="font-headline-sm text-headline-sm text-on-surface mt-1 mb-3"
+                    >
+                      Atelier Nueve
+                    </h3>
+                    <p
+                      class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6"
+                    >
+                      Cast architectural concrete facade with bespoke motorized
+                      wooden louver shutters modulating Mediterranean daylight.
+                    </p>
+                  </div>
+                  <div class="pt-4 flex items-center justify-between">
+                    <span
+                      class="font-label-md text-label-md text-primary tracking-wider uppercase group-hover:underline"
+                      >View Case Study →</span
+                    >
+                    <span
+                      class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-on-surface group-hover:bg-primary group-hover:text-on-primary transition-colors"
+                    >
+                      <span class="material-symbols-outlined text-[16px]"
+                        >arrow_forward</span
+                      >
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section 6: Studio Values & Principles -->
+        <section
+          class="w-full py-24 px-6 sm:px-10 lg:px-16 bg-surface-container-low"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="bg-surface-container-lowest rounded-[32px] p-8 sm:p-14 lg:p-16 shadow-[0_8px_32px_-4px_rgba(17,22,27,0.04)]"
+            >
+              <div class="max-w-3xl mb-14">
+                <div class="inline-flex items-center gap-2 mb-3">
+                  <span class="w-2 h-2 rounded-full bg-primary"></span>
+                  <span
+                    class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest"
+                    >Guiding Tenets</span
+                  >
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-md sm:text-headline-lg text-on-surface tracking-tight"
+                >
+                  Our architectural philosophy is anchored in four enduring
+                  commitments.
+                </h2>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
+                <!-- Value 1 -->
+                <div class="flex flex-col gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-body-md"
+                  >
+                    I
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface tracking-tight"
+                  >
+                    Radical Simplicity
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Eliminating decorative excess to allow pure geometry, void
+                    space, and natural daylight to define the emotional depth of
+                    every inhabitant experience.
+                  </p>
+                </div>
+                <!-- Value 2 -->
+                <div class="flex flex-col gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-body-md"
+                  >
+                    II
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface tracking-tight"
+                  >
+                    Material Authenticity
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Honoring raw stone, brushed bronze, and untreated timber as
+                    living materials that age with grace, celebrating the
+                    authentic patina of passing seasons.
+                  </p>
+                </div>
+                <!-- Value 3 -->
+                <div class="flex flex-col gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-body-md"
+                  >
+                    III
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface tracking-tight"
+                  >
+                    Contextual Harmony
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Every structure is born from its specific landscape,
+                    honoring indigenous ecology, local geological history, and
+                    regional craftsmanship techniques.
+                  </p>
+                </div>
+                <!-- Value 4 -->
+                <div class="flex flex-col gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-primary font-semibold text-body-md"
+                  >
+                    IV
+                  </div>
+                  <h3
+                    class="font-headline-sm text-headline-sm text-on-surface tracking-tight"
+                  >
+                    Human-Scale Warmth
+                  </h3>
+                  <p
+                    class="font-body-md text-body-md text-on-surface-variant leading-relaxed"
+                  >
+                    Conceived from the intimate touch of a custom brass door
+                    latch to the macro skyline silhouette, preserving an
+                    emotional sanctuary for modern living.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- Section 7: Call-To-Action (Commission The Studio) -->
+        <section
+          class="w-full py-20 px-6 sm:px-10 lg:px-16 bg-surface"
+          id="inquire"
+        >
+          <div class="max-w-7xl mx-auto">
+            <div
+              class="relative rounded-[32px] overflow-hidden bg-surface-container-high shadow-[0_20px_48px_-8px_rgba(17,22,27,0.08)] flex flex-col lg:flex-row items-center justify-between min-h-[380px]"
+            >
+              <!-- Left Content Area -->
+              <div
+                class="z-10 p-10 sm:p-14 lg:p-16 max-w-2xl flex flex-col items-start gap-6"
+              >
+                <div
+                  class="inline-flex items-center gap-2 bg-surface-container-lowest/80 backdrop-blur-md px-3.5 py-1.5 rounded-full font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider"
+                >
+                  <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Commence an Inquiry
+                </div>
+                <h2
+                  class="font-headline-lg text-headline-md sm:text-headline-lg text-on-surface tracking-tight leading-[1.1]"
+                >
+                  Let’s shape your architectural vision.
+                </h2>
+                <p
+                  class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed"
+                >
+                  From early masterplanning and conceptual feasibility to
+                  turnkey execution, our partners are ready to discuss your next
+                  commission.
+                </p>
+                <div class="pt-2">
+                  <a
+                    class="inline-flex items-center justify-center px-9 py-4 rounded-full bg-primary text-on-primary font-label-md text-label-md tracking-widest uppercase hover:bg-primary-container hover:text-on-primary-container transition-all shadow-[0_6px_20px_rgba(50,74,91,0.25)] transform hover:-translate-y-0.5"
+                    data-path="contact-us"
+                    href="#"
+                  >
+                    Commission The Studio
+                  </a>
+                </div>
+              </div>
+              <!-- Right Architectural Visual Detail (Placeholder with clean white architectural detail) -->
+              <div
+                class="w-full lg:w-1/2 h-72 lg:h-full lg:absolute lg:right-0 lg:top-0 lg:bottom-0 overflow-hidden"
+              >
+                <div
+                  class="w-full h-full bg-cover bg-center"
+                  data-alt="Minimalist architectural canopy detail with pure white fluted vertical facade paneling and crisp geometric shadow lines under soft white daylight, architectural minimalism."
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBBdvVoKQnOn6LiR1cMmank6T07uSai0QJF0lNWQqdzJ5FTrZlTAEKiMihsZtAWLyBqVmGxdYXxClqpf54djYhVtl5CxG7lxY_s0iDI-cV3kohG_MZUsK1qlBkzPKpqO5dS39uCA39zd2c-553Vg9UtW9ZoYR1oTAQt7uWatVnf5y3cNYtQNjFuQyhoygl03IvADHifKagshdQBGQNchWSR7NWs81mY7eIJrPV4XZfF9vvqTlNN2ZdpaA&quot;);
+                  "
+                ></div>
+                <div
+                  class="hidden lg:block absolute inset-0 bg-gradient-to-r from-surface-container-high via-surface-container-high/60 to-transparent"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(17,22,27,0.03)]"
+    >
+      <div class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-12 pb-14"
+        >
+          <div class="lg:col-span-2 flex flex-col items-start gap-4">
+            <a
+              class="flex items-center gap-1.5 focus:outline-none"
+              data-path="home"
+              href="#"
+              ><span
+                class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase"
+                >Flow<span
+                  class="inline-block w-1.5 h-1.5 rounded-full bg-primary mx-0.5 align-middle mb-1"
+                ></span
+                >form</span
+              ></a
+            >
+            <p
+              class="font-body-md text-body-md text-on-surface-variant max-w-sm"
+            >
+              Synthesizing architectural minimalism with material honesty.
+              Rigorous spaces designed for quiet confidence and atmospheric
+              living.
+            </p>
+            <div class="flex flex-col gap-2 mt-2">
+              <a
+                class="inline-flex items-center gap-2 font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                href="tel:+176355471297"
+                ><span
+                  class="material-symbols-outlined text-[18px] text-primary"
+                  >call</span
+                >+1 (7635) 547-12-97</a
+              ><a
+                class="inline-flex items-center gap-2 font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                href="mailto:support@forme.com"
+                ><span
+                  class="material-symbols-outlined text-[18px] text-primary"
+                  >mail</span
+                >support@forme.com</a
+              >
+            </div>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4
+              class="font-label-md text-label-md text-on-surface uppercase tracking-widest"
+            >
+              Studio Info
+            </h4>
+            <ul class="flex flex-col gap-2.5">
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="studio"
+                  href="#"
+                  >Our Philosophy</a
+                >
+              </li>
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="about"
+                  href="#"
+                  >Leadership &amp; Team</a
+                >
+              </li>
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="studio"
+                  href="#"
+                  >Monographs &amp; Press</a
+                >
+              </li>
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="studio"
+                  href="#"
+                  >Careers &amp; Practice</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4
+              class="font-label-md text-label-md text-on-surface uppercase tracking-widest"
+            >
+              Services
+            </h4>
+            <ul class="flex flex-col gap-2.5">
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="services"
+                  href="#"
+                  >Architectural Design</a
+                >
+              </li>
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="services"
+                  href="#"
+                  >Interior Architecture</a
+                >
+              </li>
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="services"
+                  href="#"
+                  >Landscape Integration</a
+                >
+              </li>
+              <li class="list-none">
+                <a
+                  class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors"
+                  data-path="services"
+                  href="#"
+                  >Sustainable Planning</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col gap-4">
+            <h4
+              class="font-label-md text-label-md text-on-surface uppercase tracking-widest"
+            >
+              Presence
+            </h4>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Atmospheric ateliers in Zurich, Copenhagen, and New York.
+            </p>
+            <div class="flex items-center gap-3 pt-2">
+              <a
+                aria-label="Public Gallery"
+                class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >photo_camera</span
+                ></a
+              ><a
+                aria-label="Global Network"
+                class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >public</span
+                ></a
+              ><a
+                aria-label="Architectural Feed"
+                class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-highest hover:text-on-surface transition-all"
+                href="#"
+                ><span class="material-symbols-outlined text-[18px]"
+                  >share</span
+                ></a
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 font-body-md text-body-md text-on-surface-variant"
+        >
+          <p>© 2025 Flowforme. All rights reserved.</p>
+          <div class="flex items-center gap-6">
+            <a
+              class="hover:text-on-surface transition-colors"
+              data-path="contact-us"
+              href="#"
+              >Privacy Policy</a
+            ><a
+              class="hover:text-on-surface transition-colors"
+              data-path="contact-us"
+              href="#"
+              >Terms of Architectural Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
